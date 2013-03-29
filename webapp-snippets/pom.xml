@@ -1,5 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
+	<!-- 
+	   1.  open a command prompt, type "mvn install" 
+	   2.  with maven-failsafe-plugin, any java file name with "IT" will be treated as 
+	       intergration test (by maven, the phase is integration-test)
+	   3.  with jetty-maven-plugin, it will launch a jetty app server before 
+	       integration test (by manve, the phase is pre-integration-test), and it will close up
+	       after integration test (by maven, the phase is post-integration-test)
+	 -->
+	
 	<properties>
         <spring.version>3.2.1.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
