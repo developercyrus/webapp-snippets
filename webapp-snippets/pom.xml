@@ -1,0 +1,284 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<properties>
+        <spring.version>3.2.1.RELEASE</spring.version>
+        <junit.version>4.11</junit.version>
+        <jetty.version>9.0.0.v20130308</jetty.version>
+        <jdk.version>1.7</jdk.version>
+    </properties>
+
+ 	<modelVersion>4.0.0</modelVersion>
+	<groupId>webapp-snippets</groupId>
+	<artifactId>webapp-snippets</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	
+	<build>
+	   <finalName>webapp-snippets</finalName>
+	   <plugins>	   	
+	   
+            <!-- compile -->	      	   	  
+            <plugin>            			           
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <version>3.0</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            
+            <!-- test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.11</version>
+                <configuration>
+                    <junitArtifactName>junit:junit</junitArtifactName>
+                    <encoding>UTF-8</encoding>
+                    <inputEncoding>UTF-8</inputEncoding>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <forkMode>always</forkMode>
+                    <argLine>-Dfile.encoding=UTF-8 -Xmx1024m -Xms1024m</argLine>
+                </configuration>
+            </plugin>
+
+
+            <!-- pre-integration-test -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
+                
+                <configuration>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>          
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                       <contextPath>/webapp-snippets</contextPath>
+                    </webApp>
+              
+                </configuration>
+                
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                        <configuration>
+                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <daemon>true</daemon>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!-- integration-test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            
+        </plugins>
+	</build>
+      
+    <dependencies>
+        <!-- junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>${junit.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- jsoup -->
+		<dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+		
+		
+		<!-- jetty-->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-webapp</artifactId>
+		    <version>${jetty.version}</version>
+		</dependency>
+	
+	
+<!-- 	
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-jsp</artifactId>
+		    <version>${jetty.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-servlet</artifactId>
+		    <version>${jetty.version}</version>
+		</dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-spring</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+
+ -->
+
+<!-- 
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-servlets</artifactId>
+		    <version>${jetty.version}</version>
+		</dependency>
+
+		
+                        
+            
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-util</artifactId>
+		    <version>${jetty.version}</version>
+		</dependency>
+-->
+
+
+<!--                        
+		<dependency>
+		    <groupId>org.eclipse.jetty.aggregate</groupId>
+		    <artifactId>jetty-all-server</artifactId>
+		    <version>8.1.9.v20130131</version>
+		</dependency>
+            
+            
+		<dependency>
+		    <groupId>org.eclipse.jetty.aggregate</groupId>
+		    <artifactId>jetty-webapp</artifactId>
+		    <version>8.1.9.v20130131</version>
+		</dependency>
+ -->                                             
+            
+        <!-- spring3 mvc-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+          
+       
+<!-- 
+                   
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jsp-api</artifactId>
+		    <version>2.0</version>
+		</dependency>
+            
+	   <dependency>
+	        <groupId>javax.servlet</groupId>
+	        <artifactId>javax.servlet-api</artifactId>
+	        <version>3.0.1</version>
+	        <scope>compile</scope>
+	    </dependency>                   
+-->
+ 	
+ 	
+ 	
+<!--  	
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>com.sun.el</artifactId>
+			<version>2.2.0.v201108011116</version>
+		</dependency>             
+ 
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>2.2.0.v201108011116</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>javax.servlet.jsp.jstl</artifactId>
+			<version>1.2.0.v201105211821</version>
+		</dependency>
+		                        	
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>javax.servlet.jsp</artifactId>
+			<version>2.2.0.v201112011158</version>
+		</dependency>
+             		         
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>org.apache.jasper.glassfish</artifactId>
+			<version>2.2.2.v201112011158</version>
+		</dependency>
+		                         		         
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>org.apache.taglibs.standard.glassfish</artifactId>
+			<version>1.2.0.v201112081803</version>
+		</dependency>
+            
+		<dependency>
+			<groupId>org.eclipse.jetty.orbit</groupId>
+			<artifactId>org.eclipse.jdt.core</artifactId>
+			<version>3.7.1</version>
+		</dependency>
+   
+   
+   
+
+        <dependency>
+			<groupId>org.eclipse.jdt.core.compiler</groupId>
+			<artifactId>ecj</artifactId>
+			<version>4.2.1</version>
+        </dependency>
+ -->       
+           
+    </dependencies>
+
+</project>
