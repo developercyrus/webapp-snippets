@@ -1,4 +1,4 @@
-package servlet.taglib;
+package taglib.custom;
 
 import java.io.IOException;
 

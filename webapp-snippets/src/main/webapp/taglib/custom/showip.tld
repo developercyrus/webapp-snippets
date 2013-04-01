@@ -3,11 +3,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
         version="2.0">
-	<tlib-version>2.0</tlib-version>
+	<tlib-version>1.0</tlib-version>
 	<short-name>showip</short-name>
 	<tag>
-		<name>ipaddress</name>
-		<tag-class>servlet.taglib.ShowIP</tag-class>
+		<name>ip</name>
+		<tag-class>taglib.custom.ShowIP</tag-class>
 		<body-content>empty</body-content>
 	</tag>
 </taglib> 
