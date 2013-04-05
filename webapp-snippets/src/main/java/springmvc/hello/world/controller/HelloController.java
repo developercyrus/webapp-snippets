@@ -1,5 +1,7 @@
 package springmvc.hello.world.controller;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,7 @@ public class HelloController {
 		ModelAndView mav = new ModelAndView();
         mav.setViewName("springmvc/hello/world/output");
         mav.addObject("message", "Spring 3 MVC Hello World!");
+        System.out.println(new Date());
         return mav;
 	}
 }
