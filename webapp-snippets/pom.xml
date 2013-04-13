@@ -5,7 +5,7 @@
 	   2.  with maven-failsafe-plugin, any java file name with "IT" will be treated as 
 	       intergration test (by maven, the phase is integration-test)
 	   3.  with jetty-maven-plugin, it will launch a jetty app server before 
-	       integration test (by manve, the phase is pre-integration-test), and it will close up
+	       integration test (by maven, the phase is pre-integration-test), and it will close up
 	       after integration test (by maven, the phase is post-integration-test)
 	 -->
 	
@@ -24,7 +24,7 @@
 	
 	<build>
 	   <finalName>webapp-snippets</finalName>
-	   <plugins>	   	
+	   <plugins>	   		            	  
 	   
             <!-- compile -->	      	   	  
             <plugin>            			           
@@ -36,6 +36,7 @@
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
+            
             
             <!-- test -->
             <plugin>
@@ -66,7 +67,6 @@
                     <webApp>
                        <contextPath>/webapp-snippets</contextPath>
                     </webApp>
-              
                 </configuration>
                 
                 <executions>
@@ -152,6 +152,24 @@
         </dependency>
 		
 		
+		
+
+        <!-- webjars juery -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>1.9.1</version>
+		</dependency>		
+		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>webjars-locator</artifactId>
+		    <version>0.3</version>
+		</dependency>
+            
+		
+		
+		
 		<!-- jetty-->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
@@ -164,6 +182,13 @@
 		    <artifactId>jetty-webapp</artifactId>
 		    <version>${jetty.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-runner</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		            
 	
 	
         <!-- spring3 mvc-->
@@ -184,6 +209,8 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+
 
         <!-- javax -->
         <dependency>
