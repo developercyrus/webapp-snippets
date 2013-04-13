@@ -14,6 +14,13 @@
     <context:component-scan base-package="springmvc.ajax.detect.controller" />
     <context:component-scan base-package="springmvc.hello.world.controller" />
     <context:component-scan base-package="springmvc.jmeter.http.request.param.controller" />
+    <context:component-scan base-package="webjar.include.controller" />
+
+
+    <mvc:annotation-driven/>
+    <!-- uses WebJars so Javascript and CSS libs can be declared as Maven dependencies (e.g., jQuery...) -->
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+    
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
