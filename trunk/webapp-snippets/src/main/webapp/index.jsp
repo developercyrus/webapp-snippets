@@ -22,7 +22,7 @@
 
 <h3>webjar</h3>
 <a href="http://localhost:8080/webapp-snippets/webjar-include.do">http://localhost:8080/webapp-snippets/webjar-include.do</a><br>
-<a href="http://localhost:8080/webapp-snippets/jquery/webJarInclude.html">http://localhost:8080/webapp-snippets/jquery/webJarInclude.html<a/><br>
+<a href="http://localhost:8080/webapp-snippets/jquery/webJarInclude.html">http://localhost:8080/webapp-snippets/jquery/webJarInclude.html</a><br>
 
 </body>
 </html>
