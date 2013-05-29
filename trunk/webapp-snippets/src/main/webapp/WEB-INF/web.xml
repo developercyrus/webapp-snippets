@@ -4,7 +4,6 @@
     xmlns="http://java.sun.com/xml/ns/javaee"    
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0"> 
     
-
     <display-name>Web Application</display-name>
  
     <context-param>
@@ -23,4 +22,15 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+    
+    
+    
+    <servlet> 
+        <servlet-name>model2Dispatcher</servlet-name> 
+        <servlet-class>model2.mvc.dispatcher.DispatcherServlet</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+        <servlet-name>model2Dispatcher</servlet-name> 
+        <url-pattern>*.action</url-pattern> 
+    </servlet-mapping> 
 </web-app>      
