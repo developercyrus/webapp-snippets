@@ -13,6 +13,13 @@
 <a href="http://localhost:8080/webapp-snippets/springmvc-hello-world.do">http://localhost:8080/webapp-snippets/springmvc-hello-world.do</a><br>
 <a href="http://localhost:8080/webapp-snippets/springmvc-jmeter-http-request-param.do?id=10">http://localhost:8080/webapp-snippets//springmvc-jmeter-http-request-param.do?id=10</a><br>
 
+<h3>Model1 MVC</h3>
+<a href="http://localhost:8080/webapp-snippets/model1/mvc/view/index.jsp">http://localhost:8080/webapp-snippets/model1/mvc/view/index.jsp</a><br>
+
+<h3>Model2 MVC</h3>
+<a href="http://localhost:8080/webapp-snippets/welcome.action">http://localhost:8080/webapp-snippets/welcome.action</a><br>
+
+
 <h3>jQuery</h3>
 <a href="http://localhost:8080/webapp-snippets/jquery/dynamicInputBox.html">http://localhost:8080/webapp-snippets/jquery/dynamicInputBox.html</a><br>
 
