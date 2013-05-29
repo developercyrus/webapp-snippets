@@ -1,4 +1,4 @@
-<%@ taglib uri="/taglib/custom/showip.tld" prefix="showip"%>
+<%@ taglib uri="/taglib/custom/showip.tld" prefix="showaddress"%>
 <body>
-my ip address: <showip:ip/>
+my ip address: <showaddress:ip/>
 </body>
