@@ -13,6 +13,8 @@
  
     <context:component-scan base-package="springmvc.ajax.detect.controller" />
     <context:component-scan base-package="springmvc.hello.world.controller" />
+    <context:component-scan base-package="springmvc.form.allow.submit.duplicate.controller" />
+    <context:component-scan base-package="springmvc.form.disallow.submit.duplicate.controller" />
     <context:component-scan base-package="springmvc.jmeter.http.request.param.controller" />
     <context:component-scan base-package="webjar.include.controller" />
 
