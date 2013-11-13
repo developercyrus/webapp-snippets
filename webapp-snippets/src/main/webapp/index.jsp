@@ -19,7 +19,6 @@
 <h3>Model2 MVC</h3>
 <a href="http://localhost:8080/webapp-snippets/welcome.action">http://localhost:8080/webapp-snippets/welcome.action</a><br>
 
-
 <h3>jQuery</h3>
 <a href="http://localhost:8080/webapp-snippets/jquery/dynamicInputBox.html">http://localhost:8080/webapp-snippets/jquery/dynamicInputBox.html</a><br>
 
@@ -30,6 +29,14 @@
 <h3>webjar</h3>
 <a href="http://localhost:8080/webapp-snippets/webjar-include.do">http://localhost:8080/webapp-snippets/webjar-include.do</a><br>
 <a href="http://localhost:8080/webapp-snippets/jquery/webJarInclude.html">http://localhost:8080/webapp-snippets/jquery/webJarInclude.html</a><br>
+
+<h3>Allow form submit duplicate</h3>
+<a href="http://localhost:8080/webapp-snippets/springmvc-form-allow-submit-duplicate.do">http://localhost:8080/webapp-snippets/springmvc-form-allow-submit-duplicate.do</a><br>
+
+<h3>Disllow form submit duplicate</h3>
+<a href="http://localhost:8080/webapp-snippets/springmvc-form-disallow-submit-duplicate.do">http://localhost:8080/webapp-snippets/springmvc-form-disallow-submit-duplicate.do</a><br>
+
+
 
 </body>
 </html>
